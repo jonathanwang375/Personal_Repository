@@ -1,0 +1,14 @@
+name: Python Code Format
+
+on: [push, pull_request]
+
+jobs:
+  python_code_format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: psf/black@stable
+      with:
+        options: "--check --verbose"
+        src: "./src"
+        version: "~= 22.0"
