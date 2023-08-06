@@ -12,3 +12,5 @@ jobs:
         options: "--check --verbose"
         src: "./src"
         version: "~= 22.0"
+      - run: |
+          black --check --verbose .
