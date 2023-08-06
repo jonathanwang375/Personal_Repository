@@ -3,10 +3,12 @@ import openpyxl
 from dataclasses import dataclass
 from typing import List
 
+
 @dataclass
 class WeekSelection:
     team_chosen: teams.Team
     week_number: int
+
 
 @dataclass
 class Person:
@@ -18,11 +20,13 @@ class Person:
     overall_loss: int
     place: int
 
+
 ParticipantList: List[Person]
 NameList: List
 
+
 def set_overall_record():
-    #set the overall record for each person
+    # set the overall record for each person
     for person in ParticipantList:
         overall_win = 0
         overall_loss = 0
@@ -32,10 +36,11 @@ def set_overall_record():
         person.overall_wins = overall_win
         person.overall_loss = overall_loss
 
+
 def check_team_status(team_name: str, loss: bool):
-    #if the team won, check to see who selected team. anyone who selected the team moves on
-    #if the team loss, check to see who selected team. anyone who selected the team is eliminated
-    #update the records of everyone 
+    # if the team won, check to see who selected team. anyone who selected the team moves on
+    # if the team loss, check to see who selected team. anyone who selected the team is eliminated
+    # update the records of everyone
     test = False
     if loss:
         for person in ParticipantList:
@@ -50,18 +55,22 @@ def check_team_status(team_name: str, loss: bool):
     set_overall_record()
     determine_place()
 
+
 def add_participants():
-    #add players to the list, edit players' name, delete players' name and finalize list
+    # add players to the list, edit players' name, delete players' name and finalize list
     test = False
+
 
 def determine_place():
-    #this will determine the place of each player and reshuffle the list based off of that
+    # this will determine the place of each player and reshuffle the list based off of that
     test = False
+
 
 def add_team_guess(participant_name: str, team_name: str):
-    #add the team to the end of list when someone makes a guess
+    # add the team to the end of list when someone makes a guess
     test = False
 
+
 def change_team_guess(participant_name: str, new_team_name: str):
-    #change the name of the team when a player wants to
+    # change the name of the team when a player wants to
     test = False
