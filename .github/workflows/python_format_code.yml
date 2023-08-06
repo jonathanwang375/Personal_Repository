@@ -14,6 +14,6 @@ jobs:
           python-version: "3.11.4"
       - run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r ../../common_files/requirements.txt
       - run: |
           black --check --verbose .
