@@ -1,1 +1,1 @@
-#Highly Divisible Triagular Number
+# Highly Divisible Triagular Number

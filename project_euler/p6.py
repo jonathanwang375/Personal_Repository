@@ -1,1 +1,1 @@
-#Sum Square Difference
+# Sum Square Difference

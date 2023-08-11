@@ -1,1 +1,1 @@
-#Special Pythagorean Triplet
+# Special Pythagorean Triplet
