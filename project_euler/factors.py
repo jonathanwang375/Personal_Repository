@@ -1,14 +1,5 @@
 import projecteuler as pe
 
-factors_list = find_factors(600851475143)
-prime_list = []
-for b in range(len(factors_list)):
-    fact_list = find_factors(factors_list[b])
-    if len(fact_list) == 2:
-        prime_list.append(factors_list[b])
-for c in range(len(prime_list)):
-    print(prime_list[c])
-
 fact_list_2 = []
 prime_num_list = []
 prime_num_list.append(2)
