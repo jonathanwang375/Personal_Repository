@@ -104,3 +104,9 @@ def gcd(a, b):
     while a > b:
         a = a - b
     return a
+
+
+def fib_num(term_a: int, term_b: int):
+    new_term_a = term_b
+    new_term_b = term_a + term_b
+    return new_term_a, new_term_b
