@@ -1,8 +1,6 @@
 import projecteuler as pe
 import sort
-import math
 
-print("Problem 22")
 list = pe.txt_to_file("p022_names.txt")
 sort.merge_sort(list, 0, len(list) - 1)
 sum = 0
