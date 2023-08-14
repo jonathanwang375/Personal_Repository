@@ -8,9 +8,4 @@ for a in range(2, 101):
             list.append(test)
 print("Problem 29")
 print(len(list))
-print("Starting Problem 48")
-sum = 0
-for a in range(1, 1001):
-    sum = sum + a**a
-test = str(sum)
-print(test[-10:])
+
