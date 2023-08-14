@@ -1,11 +1,14 @@
 # Smallest Multiple
 
-sum_squares = 0
-sqaure_sum = 0
-sum_natural_num = 0
-
-for index in range(1, 101):
-    sum_natural_num = sum_natural_num + index
-    sum_squares = sum_squares + (index**2)
-square_sum = sum_natural_num**2
-print(square_sum - sum_squares)
+found = False
+number = 20
+while not found:
+    divisible = True
+    for index in range(1, 21):
+        if number % index != 0:
+            divisible = False
+    if divisible:
+        found = True
+    else:
+        number = number + 1
+print(number)
