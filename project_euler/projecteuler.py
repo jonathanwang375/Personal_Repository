@@ -117,3 +117,11 @@ def factorial(number: int):
     for index in range(2, (number + 1)):
         result = result * index
     return result
+
+
+def combination(n: int, k: int):
+    n_fact = factorial(n)
+    k_fact = factorial(k)
+    nk_fact = factorial(n - k)
+    result = n_fact / (k_fact * nk_fact)
+    return result

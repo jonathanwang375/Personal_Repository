@@ -1,8 +1,7 @@
 # Self Powers
 
-print("Starting Problem 48")
 sum = 0
-for a in range(1, 1001):
-    sum = sum + a**a
-test = str(sum)
-print(test[-10:])
+for number in range(1, 1001):
+    sum = sum + number**number
+sum_string = str(sum)
+print(sum_string[-10:])
