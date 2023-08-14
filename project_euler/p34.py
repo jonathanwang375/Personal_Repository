@@ -1,18 +1,12 @@
 # Digit Factorials
+import projecteuler as pe
 
-print("Starting Problem 34")
-factlist = []
-for d in range(0, 100000000):
-    test = str(d)
-    sumfact = 0
-    for e in range(0, len(test)):
-        sumfact = sumfact + math.factorial(int(test[e]))
-    if sumfact == d:
-        factlist.append(d)
-finalsumfact = 0
-for f in range(0, len(factlist)):
-    finalsumfact = finalsumfact + factlist[f]
-finalsumfact = finalsumfact - 2 - 1
-print("Problem 34")
-print(factlist)
-print(finalsumfact)
+sum = 0
+for number in range(3, 1000000):
+    number_string = str(number)
+    sum_test = 0
+    for index in range(0, len(number_string)):
+        sum_test = sum_test + pe.factorial(int(number_string[index]))
+    if sum_test == number:
+        sum = sum + number
+print(sum)
