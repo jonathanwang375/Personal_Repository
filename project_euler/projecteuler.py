@@ -12,17 +12,17 @@ def find_factors(num):
 
 def triangular_number(num):
     test = (num) * (num + 1) * (1 / 2)
-    return test
+    return int(test)
 
 
 def pentagonal_number(num):
     test = (3 * num - 1) * (num) * (1 / 2)
-    return test
+    return int(test)
 
 
 def hexagonal_number(num):
     test = (2 * num) * (2 * num + 1) * (1 / 2)
-    return test
+    return int(test)
 
 
 def check_triangular_number(num):
