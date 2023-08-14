@@ -1,15 +1,5 @@
 import projecteuler as pe
 
-fact_list_3 = []
-sum = 5
-current = 3
-while current < 2000000:
-    current = current + 2
-    fact_list_3 = pe.find_factors(current)
-    if len(fact_list_3) == 2:
-        sum = sum + current
-print("The sum is: " + str(sum))
-
 tri_fact_list = []
 a = 1
 test = 0
