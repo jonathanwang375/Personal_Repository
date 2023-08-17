@@ -1,5 +1,34 @@
 import math
 
+alphabet_list = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+]
+
 
 def find_factors(num):
     list = []
@@ -26,7 +55,7 @@ def hexagonal_number(num):
 
 
 def check_triangular_number(num):
-    result = quadratic_solver(1, 1, 2 * num)
+    result = quadratic_solver(1, 1, -2 * num)
     final = False
     if len(result) == 2:
         if (result[0] > 0 and result[0] % 1 == 0) or (
@@ -48,7 +77,7 @@ def check_pentagonal_number(num):
 
 
 def check_hexagonal_number(num):
-    result = quadratic_solver(2, -1, num)
+    result = quadratic_solver(2, -1, -1 * num)
     final = False
     if len(result) == 2:
         if (result[0] > 0 and result[0] % 1 == 0) or (
@@ -125,3 +154,8 @@ def combination(n: int, k: int):
     nk_fact = factorial(n - k)
     result = n_fact / (k_fact * nk_fact)
     return result
+
+
+def convert_character_to_number(character: str):
+    result = alphabet_list.index(character)
+    return int(result + 1)
