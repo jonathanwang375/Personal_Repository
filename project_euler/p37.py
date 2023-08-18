@@ -12,7 +12,7 @@ for number in range(9, limit, 2):
         if len(factor_list) != 2:
             prime = False
     for index in range(1, len(number_string) + 1):
-        test_number = int(number_string[(-1*index):])
+        test_number = int(number_string[(-1 * index) :])
         factor_list = pe.find_factors(test_number)
         if len(factor_list) != 2:
             prime = False
