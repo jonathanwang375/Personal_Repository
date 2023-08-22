@@ -29,7 +29,6 @@ alphabet_list = [
     "Z",
 ]
 
-
 def find_factors(num):
     list = []
     for a in range(1, int(math.sqrt(num)) + 1, 1):
@@ -159,3 +158,31 @@ def combination(n: int, k: int):
 def convert_character_to_number(character: str):
     result = alphabet_list.index(character)
     return int(result + 1)
+
+def convert_roman_to_number(character: str):
+    result = 0
+    character_index = 0
+    while (character_index < len(character)):
+        if character[character_index] == "M":
+            result = result + 1000
+            character_index = character_index + 1
+        elif character[character_index] == "D":
+            result = result + 500
+            character_index = character_index + 1
+        elif character[character_index] == "C":
+            if character[character_index + 1] == "M":
+                result = result + 900
+                character_index = character_index + 2
+            elif character[character_index + 1] == "D":
+                result = result + 400
+                character_index = character_index + 2
+            else:
+                result = result + 100
+                character_index = character_index + 1
+        elif 
+
+    return result
+
+def convert_number_to_roman(number: int):
+    result = ""
+    return result
