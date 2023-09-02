@@ -159,30 +159,107 @@ def convert_character_to_number(character: str):
     result = alphabet_list.index(character)
     return int(result + 1)
 
-def convert_roman_to_number(character: str):
-    result = 0
-    character_index = 0
-    while (character_index < len(character)):
-        if character[character_index] == "M":
-            result = result + 1000
-            character_index = character_index + 1
-        elif character[character_index] == "D":
-            result = result + 500
-            character_index = character_index + 1
-        elif character[character_index] == "C":
-            if character[character_index + 1] == "M":
-                result = result + 900
-                character_index = character_index + 2
-            elif character[character_index + 1] == "D":
-                result = result + 400
-                character_index = character_index + 2
+def convert_roman_to_number(roman_string: str) -> int:
+    number_result = 0
+    string_index = 0
+    while (string_index <= (len(roman_string) - 1)):
+        if roman_string[string_index] == "I":
+            if ((string_index + 1) < len(roman_string)):
+                if roman_string[string_index + 1] == "V":
+                    number_result = number_result + 4
+                    string_index = string_index + 2
+                elif roman_string[string_index + 1] == "X":
+                    number_result = number_result + 9
+                    string_index = string_index + 2
+                else:
+                    number_result = number_result + 1
+                    string_index = string_index + 1
             else:
-                result = result + 100
-                character_index = character_index + 1
-        elif 
+                number_result = number_result + 1
+                string_index = string_index + 1
+        elif roman_string[string_index] == "V":
+            number_result = number_result + 5
+            string_index = string_index + 1
+        elif roman_string[string_index] == "X":
+            if ((string_index + 1) < len(roman_string)):
+                if roman_string[string_index + 1] == "L":
+                    number_result = number_result + 40
+                    string_index = string_index + 2
+                elif roman_string[string_index + 1] == "C":
+                    number_result = number_result + 90
+                    string_index = string_index + 2
+                else:
+                    number_result = number_result + 10
+                    string_index = string_index + 1
+            else:
+                number_result = number_result + 10
+                string_index = string_index + 1
+        elif roman_string[string_index] == "L":
+            number_result = number_result + 50
+            string_index = string_index + 1
+        elif roman_string[string_index] == "C":
+            if ((string_index + 1) < len(roman_string)):
+                if roman_string[string_index + 1] == "D":
+                    number_result = number_result + 400
+                    string_index = string_index + 2
+                elif roman_string[string_index + 1] == "M":
+                    number_result = number_result + 900
+                    string_index = string_index + 2
+                else:
+                    number_result = number_result + 100
+                    string_index = string_index + 1
+            else: 
+                number_result = number_result + 100
+                string_index = string_index + 1
+        elif roman_string[string_index] == "D":
+            number_result = number_result + 500
+            string_index = string_index + 1
+        elif roman_string[string_index] == "M":
+            number_result = number_result + 1000
+            string_index = string_index + 1
+    return number_result
 
-    return result
 
-def convert_number_to_roman(number: int):
-    result = ""
-    return result
+def convert_number_to_roman(number: int) -> str:
+    roman_result = ""
+    while (number != 0):
+        if number >= 1000:
+            roman_result = roman_result + "M"
+            number = number - 1000
+        elif number >= 900:
+            roman_result = roman_result + "CM"
+            number = number - 900
+        elif number >= 500:
+            roman_result = roman_result + "D"
+            number = number - 500
+        elif number >= 400:
+            roman_result = roman_result + "CD"
+            number = number - 400
+        elif number >= 100:
+            roman_result = roman_result + "C"
+            number = number - 100
+        elif number >= 90:
+            roman_result = roman_result + "XC"
+            number = number - 90
+        elif number >= 50:
+            roman_result = roman_result + "L"
+            number = number - 50
+        elif number >= 40:
+            roman_result = roman_result + "XL"
+            number = number - 40
+        elif number >= 10:
+            roman_result = roman_result + "X"
+            number = number - 10
+        elif number >= 9:
+            roman_result = roman_result + "IX"
+            number = number - 9
+        elif number >= 5:
+            roman_result = roman_result + " V"
+            number = number - 5
+        elif number >= 4:
+            roman_result = roman_result + "IV"
+            number = number - 4
+        elif number >= 1:
+            roman_result = roman_result + "I"
+            number = number - 1
+    return roman_result
