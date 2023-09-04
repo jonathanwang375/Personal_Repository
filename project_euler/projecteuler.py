@@ -35,8 +35,18 @@ def find_factors(num):
     for a in range(1, int(math.sqrt(num)) + 1, 1):
         if num % a == 0:
             list.append(a)
-            list.append(int(num / a))
+            check_factor = int(num / a)
+            if check_factor not in list:
+                list.append(check_factor)
     return list
+
+
+def is_prime(number: int):
+    factor_list = find_factors(number)
+    if len(factor_list) == 2:
+        return True
+    else:
+        return False
 
 
 def triangular_number(num):
