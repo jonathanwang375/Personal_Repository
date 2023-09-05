@@ -1,14 +1,10 @@
 # Smallest Multiple
+import projecteuler as pe
 
-found = False
 number = 20
-while not found:
-    divisible = True
-    for index in range(1, 21):
-        if number % index != 0:
-            divisible = False
-    if divisible:
-        found = True
-    else:
-        number = number + 1
-print(number)
+prime_list = []
+prime_count_list = []
+for number in range(1, (number + 1)):
+    if pe.is_prime(number) and number not in prime_list:
+        prime_list.append(number)
+print(prime_list)
